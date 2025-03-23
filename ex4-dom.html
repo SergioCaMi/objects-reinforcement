@@ -30,10 +30,9 @@
             </ul>
         </div>
 
-        <div class="w3-third w3-margin-bottom">
-
+        <div class="w3-third w3-margin-bottom" id = "pro">
             <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-                <li class="w3-green w3-xlarge w3-padding-32">Pro</li>
+                <li class="w3-green w3-xlarge w3-padding-32" id = "txtPlanPro">Pro</li>
                 <li class="w3-padding-16"><b>25GB</b> Storage</li>
                 <li class="w3-padding-16"><b>25</b> Emails</li>
                 <li class="w3-padding-16"><b>25</b> Domains</li>
@@ -48,7 +47,7 @@
             </ul>
         </div>
 
-        <div class="w3-third w3-margin-bottom">
+        <div class="w3-third w3-margin-bottom" id="premium">
             <ul class="w3-ul w3-border w3-center w3-hover-shadow">
                 <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
                 <li class="w3-padding-16"><b>50GB</b> Storage</li>
@@ -71,7 +70,8 @@
         // Resultado esperado: vídeo con audio https://oscarm.tinytake.com/msc/ODg2NTA5NV8yMjMxMjI2OQ
 
         // 1. Muestra por consola el precio del plan "PREMIUM". Deberíamos observar '$ 50'
-        
+        let text = (document.querySelector("#premium h2").textContent);
+        console.log(text);
 
         // 2. Modifica por JavaScript el nombre del plan "Pro". Cambialo por el texto que aparece en el objeto "plans" para el plan "pro"
         const plans = {
@@ -79,11 +79,11 @@
             pro: "Pro - Recommended",
             premium: "Premium"
         }
-
+        document.querySelector("#txtPlanPro").textContent = plans.pro;
         // 3. Está página tiene una triquiñuela. Tras pasados 10 segundos, actualiza el precio del plan Pro a $ 20 para convencer al usuario y que tome el plan. Modifica la línea más abajo que pone `Cambiame!` con el valor adecuado para la propiedad .innerHTML para obtener el resultado esperado. No te precoupes por la función setTimeout, tan solo modifica la línea indicada.
         setTimeout(function () {
 
-            document.querySelector('#price-pro').innerHTML = `Cambiame!`;
+            document.querySelector('#price-pro').innerHTML = `$ 20`;
 
         }, 10000);
 
